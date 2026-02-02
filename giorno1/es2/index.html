@@ -5,12 +5,12 @@
 <title>Allegra Del Rosso</title>
 
 <style>
-html,body{
+html, body {
     margin:0;
     padding:0;
 }
 
-body{
+body {
     font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
     background:#000;
     overflow-x:hidden;
@@ -18,15 +18,15 @@ body{
 }
 
 /* --- CONTENUTO PRINCIPALE --- */
-.main{
+.main {
     position:relative;
     z-index:2;
-    min-height:130vh;
+    min-height:150vh;
     padding:120px 80px 80px 80px;
 }
 
 /* TITOLO */
-h1{
+h1 {
     position:sticky;
     top:100px;
     font-size:104px;
@@ -41,86 +41,80 @@ h1{
 }
 
 /* TESTO PRESENTAZIONE */
-.intro{
+.intro {
     max-width:720px;
     font-weight:300;
     font-size:18px;
     line-height:1.7;
     text-align:left;
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity .6s ease, transform .6s ease;
-}
-
-.intro.sticky{
-    position:sticky;
-    top:260px;
+    opacity:1;
+    transform:translateY(0);
+    transition:opacity .3s ease, transform .3s ease;
 }
 
 /* --- LINK ESERCIZI --- */
-.links{
+.links {
     position:fixed;
     right:40px;
     bottom:40px;
     z-index:3;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:12px;
     text-align:right;
-    opacity:0;
-    transform:translateY(30px);
-    transition:opacity .6s ease, transform .6s ease;
 }
 
-.links a{
+.links a {
     color:white;
     text-decoration:none;
-    font-weight:300;
-    font-size:16px;
+    font-weight:400;
+    font-size:18px; /* più grande rispetto a prima */
     display:inline-block;
     transition:transform .2s ease, opacity .2s ease;
 }
 
-.links a:hover{
-    transform:translateY(-5px);
+/* Animazione cursore su hover */
+.links a:hover {
+    animation:jump 0.4s ease infinite alternate;
     opacity:.8;
 }
 
-/* --- FOOTER INSTAGRAM --- */
-footer{
+@keyframes jump {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-5px); }
+}
+
+/* --- FOOTER INSTAGRAM + PORTFOLIO --- */
+footer {
     padding:40px 80px 50px 80px;
 }
 
-footer a{
+footer a {
     color:white;
     text-decoration:none;
     font-weight:300;
     font-size:16px;
     opacity:.8;
+    margin-right:20px;
 }
 
-footer a:hover{
+footer a:hover {
     opacity:1;
 }
 
-/* PORTFOLIO vicino al cursore */
-#portfolioCursor{
-    position:fixed;
-    top:0;
-    left:0;
-    pointer-events:none;
-    font-size:12px;
-    letter-spacing:2px;
+footer span {
+    font-size:16px;
     font-weight:300;
-    color:white;
-    opacity:0;
-    transform:translate(12px,12px);
-    transition:opacity .2s ease;
-    z-index:9999;
+    opacity:.8;
+    letter-spacing:1px;
+}
+
+footer span:hover {
+    opacity:1;
 }
 
 /* --- GRAFICHE DI SFONDO --- */
-.background{
+.background {
     position:fixed;
     inset:0;
     overflow:hidden;
@@ -128,7 +122,7 @@ footer a:hover{
     pointer-events:none;
 }
 
-.line{
+.line {
     position:absolute;
     width:140%;
     height:2px;
@@ -150,7 +144,7 @@ footer a:hover{
     to{ transform:translateX(30%); }
 }
 
-.circle{
+.circle {
     position:absolute;
     width:320px;
     height:320px;
@@ -171,9 +165,11 @@ footer a:hover{
 }
 
 @keyframes floatCircle{
-    from{ transform:translateX(0) translateY(0); }
-    to{ transform:translateX(120vw) translateY(-80px); }
+    0% { transform: translateX(0) translateY(0); }
+    50% { transform: translateX(60vw) translateY(20px); }
+    100% { transform: translateX(120vw) translateY(0); }
 }
+
 </style>
 </head>
 <body>
@@ -187,91 +183,40 @@ footer a:hover{
 </div>
 
 <div class="main">
-
-    <h1 id="title">ALLEGRA DEL ROSSO</h1>
-
-    <p class="intro" id="intro">
-        Questo è il sito personale di Allegra Del Rosso, uno spazio dedicato
-        alla raccolta di esercizi, progetti e sperimentazioni visive sviluppate
-        nel tempo come parte di un percorso di ricerca sul linguaggio grafico
-        e sulla comunicazione contemporanea.<br><br>
-        Il sito nasce come archivio aperto di prove, tentativi e processi,
-        dove il design viene inteso come strumento di osservazione,
-        di analisi e di costruzione di senso attraverso la forma,
-        il ritmo, il movimento e la relazione tra elementi tipografici
-        e visivi.<br><br>
-        Ogni esercizio rappresenta una tappa di esplorazione personale,
-        un momento di studio sullo spazio, sulla composizione,
-        sull’equilibrio e sull’interazione tra struttura e contenuto,
-        con l’obiettivo di sviluppare uno sguardo progettuale critico
-        e consapevole.
-    </p>
-
+    <h1>Allegra Del Rosso</h1>
+    <div class="intro">
+        Questo è il sito personale di Allegra Del Rosso, dedicato alla
+        raccolta di esercizi, progetti e sperimentazioni visive.
+        Il sito nasce come spazio di ricerca sul design, sul movimento e sulla
+        composizione grafica contemporanea, dove ogni lavoro diventa un
+        percorso di esplorazione tra forma, ritmo e comunicazione.<br><br>
+        Qui esploro tecniche di animazione, interazione e layout innovativi.<br>
+        Ogni progetto è documentato con attenzione ai dettagli visivi e funzionali.<br>
+        Il sito vuole stimolare la creatività e la sperimentazione continua.<br>
+        Scopri come forma, colore e movimento possono comunicare insieme.
+    </div>
 </div>
 
-<div class="links" id="links">
-    <a href="#">esercizio 1</a>
-    <a href="#">esercizio 2</a>
-    <a href="#">esercizio 3</a>
+<div class="links">
+    <a href="#">Esercizio 1</a>
+    <a href="#">Esercizio 2</a>
+    <a href="#">Esercizio 3</a>
+    <a href="#">Esercizio 4</a>
 </div>
 
 <footer>
-    <a href="https://www.instagram.com" target="_blank" id="instagramLink">
-        Instagram
-    </a>
+    <a href="https://www.instagram.com/accounts/login/" target="_blank">Instagram</a>
+    <a href="#">Portfolio</a>
+    <span>© 2026 Allegra Del Rosso</span>
 </footer>
 
-<div id="portfolioCursor">PORTFOLIO</div>
-
 <script>
-const title = document.getElementById("title");
-const intro = document.getElementById("intro");
-const links = document.getElementById("links");
-
-let introStarted = false;
-let introReleased = false;
-
-window.addEventListener("scroll", () => {
-
-    const y = window.scrollY;
-
-    title.style.transform = `translateY(${y * 0.25}px)`;
-
-    if(y > 60 && !introStarted){
-
-        intro.style.opacity = "1";
-        intro.style.transform = "translateY(0)";
-        intro.classList.add("sticky");
-
-        introStarted = true;
-
-        setTimeout(() => {
-            intro.classList.remove("sticky");
-            introReleased = true;
-        }, 5000);
-    }
-
-    if(introReleased && y > 160){
-        links.style.opacity = "1";
-        links.style.transform = "translateY(0)";
-    }
-
-});
-
-const instaLink = document.getElementById("instagramLink");
-const portfolioCursor = document.getElementById("portfolioCursor");
-
-instaLink.addEventListener("mouseenter", () => {
-    portfolioCursor.style.opacity = "1";
-});
-
-instaLink.addEventListener("mouseleave", () => {
-    portfolioCursor.style.opacity = "0";
-});
-
-window.addEventListener("mousemove", (e) => {
-    portfolioCursor.style.left = e.clientX + "px";
-    portfolioCursor.style.top  = e.clientY + "px";
+// Effetto dissolvenza testo durante lo scroll
+const intro = document.querySelector('.intro');
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const maxScroll = 500; // leggermente più lungo per testo più grande
+    intro.style.opacity = Math.max(0, 1 - scrollTop / maxScroll);
 });
 </script>
 
