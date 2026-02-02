@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<title>Allegra Del Rosso</title>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    body {
+        background-color: #0f3b2e; /* verde scuro */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    h1 {
+        color: #ffffff;
+        font-weight: 300; /* Light */
+        font-size: 64px;
+        letter-spacing: 2px;
+        margin: 0 0 40px 0;
+        transition: letter-spacing 0.35s ease;
+        cursor: default;
+    }
+
+    /* Animazione titolo: aumenta leggermente la spaziatura */
+    h1:hover {
+        letter-spacing: 8px;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 300;
+        font-size: 18px;
+        transition: transform 0.2s ease, opacity 0.2s ease;
+        display: inline-block;
+    }
+
+    /* Animazione link: si alzano leggermente */
+    .links a:hover {
+        transform: translateY(-4px);
+        opacity: 0.85;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>ALLEGRA DEL ROSSO</h1>
+
+    <div class="links">
+        <a href="#">esercizio 1</a>
+        <a href="#">esercizio 2</a>
+        <a href="#">esercizio 3</a>
+    </div>
+</div>
+
+</body>
+</html>
